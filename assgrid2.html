@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 60px;
+
+        }
+        .container{
+            height: 100vh;
+            width: 100%;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-template-rows:50px 150px 150px 30px;
+            gap: 0px;
+           
+            
+        }
+        .items{
+            border: 6px solid rgb(35, 34, 34);
+        }
+        .item1{
+            background-image: linear-gradient(to right, #a16eff, #e77ee0);
+            grid-column-start: 1;
+            grid-column-end: 4;
+            
+
+        }
+        .item2{
+            background-image: linear-gradient(to bottom, #7ee4e7, #6bc1ff);
+            grid-row-start: 2;
+            grid-row-end: 4;
+        }
+        .item3{
+             background-image: linear-gradient(to bottom right, #b57eff, #8de3ff);
+            grid-column-start: 2;
+            grid-column-end: 4;
+        }
+        .item4{
+             background-image: linear-gradient(to bottom right, #b57eff, #8de3ff);
+
+        }
+          .item5{
+             background-image: linear-gradient(to bottom right, #b57eff, #8de3ff);
+
+        }
+           .item6{
+            background-image: linear-gradient(to right, #a16eff, #e77ee0);
+            grid-column-start: 1;
+            grid-column-end: 4;
+
+        }
+
+    </style>
+</head>
+<body>
+    <section class="container">
+        <item class="items item1">ele1</item>
+        <item class="items item2">ele2</item>
+        <item class="items item3">ele3</item>
+        <item class="items item4">ele4</item>
+        <item class="items item5">ele5</item>
+        <item class="items item6">ele6</item>
+     
+    </section>
+</body>
+</html>
