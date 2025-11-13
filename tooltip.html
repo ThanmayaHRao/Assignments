@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0px;
+            margin: 0px;
+
+        }
+        .conatiner{
+            position: relative;
+        }
+        button{
+            width: 80px;
+            height: 40px;
+            background-color: blue;
+            color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            cursor: pointer;
+
+        }
+        .toolip{
+            width: 150px;
+            height: 40px;
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            box-shadow: 0px 0px 1px 0px;
+            text-align: center;
+            display: none;
+        }
+        .container:hover .toolip{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="btn1">
+            <button>button</button>
+        </div>
+        <div class="toolip">
+            <p>tooplip</p>
+        </div>
+       
+    </div>
+</body>
+</html>
