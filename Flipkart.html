@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+      .main {
+        display: flex;
+        width: 70%;
+        height:70%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .left {
+        width: 30%;
+        height: 100vh;
+        background-color: rgb(43, 105, 237);
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+        position: relative;
+      }
+      .left > p {
+        color: white;
+        margin: 20px;
+        line-height: 1.5;
+      }
+      .left > h1 {
+        color: white;
+        margin: 20px;
+      }
+      .right {
+        width: 70%;
+        height: 100vh;
+        background-color: rgb(240, 240, 240);
+        margin: 10px;
+      }
+      .rightin {
+        width: 80%;
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+        gap: 100px;
+        background-color: rgb(240, 240, 240);
+        margin: auto;
+        margin-top: 60px;
+        position: relative;
+      }
+      a {
+        text-decoration: none;
+      }
+      button {
+        width: 90%;
+        height: 40px;
+        background-color: rgb(238, 128, 19);
+        color: white;
+        border: none;
+      }
+      .img1 {
+        width: 75%;
+        height: 150px;
+        object-fit: cover;
+
+        position: absolute;
+        top: 72%;
+        left: 10%;
+        background-image: url(https://media.licdn.com/dms/image/v2/C5112AQGk63ND6KjOEg/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1520182629499?e=2147483647&v=beta&t=smVZiPWPO92bZQRjMQl7l7BGvPn1Yak1kLgm33HQUeU);
+        background-size: contain;
+      }
+      .input{
+        border: none;
+        border-bottom: 1px solid gray;
+        background: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="left">
+        <h1>Login</h1>
+        <p>
+          Get acces to your Orders, <br />
+          Whistlist and <br />
+          Reccommendations
+        </p>
+        <div class="img1">
+          <img src="" alt="" />
+        </div>
+      </div>
+      <div class="right">
+        <div class="rightin">
+          <input class="input"
+            style="width: 100%; height: 40px"
+            type="text"
+            placeholder="Enter Email/Mobile number"
+           
+          />
+          <p style="color: gray">
+            By contuning,you agree to Flipkart's <a href="">Terms of Use</a> and
+            <a href="">Privecy policy</a>
+          </p>
+          <button>Request OTP</button>
+          <p style="position: absolute; top: 96%; left:20% ; ">
+            New to Flipkart?Create an account
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
