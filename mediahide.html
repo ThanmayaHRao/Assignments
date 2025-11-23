@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Hide on Small Screens</title>
+
+<style>
+.box{
+    width:300px;
+    height:150px;
+    background:#4d8ff5;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:22px;
+    border-radius:8px;
+    margin:20px auto;
+}
+
+@media (max-width:768px){
+    .hide-on-small{
+        display:none;
+    }
+}
+</style>
+
+</head>
+<body>
+
+<div class="box hide-on-small">This Div Hides on Small Screens</div>
+
+<div class="box" style="background:#e76f3c;">Always Visible Div</div>
+
+</body>
+</html>

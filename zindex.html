@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Simple Modal</title>
+<style>
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+#bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 1;
+    display: none;
+}
+
+#modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    z-index: 2;
+    display: none;
+    text-align: center;
+}
+
+button {
+    padding: 8px 15px;
+    font-size: 14px;
+}
+
+</style>
+</head>
+<body>
+
+<button id="open">Open Modal</button>
+
+<div id="bg"></div>
+
+<div id="modal">
+    <h3>Modal Box</h3>
+    <p>This is a simple modal.</p>
+    <button id="close">Close</button>
+</div>
+
+<script>
+document.getElementById("open").onclick = function(){
+    document.getElementById("bg").style.display = "block";
+    document.getElementById("modal").style.display = "block";
+}
+
+document.getElementById("close").onclick = function(){
+    document.getElementById("bg").style.display = "none";
+    document.getElementById("modal").style.display = "none";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Flexbox Properties Demo</title>
+<style>
+  :root{
+    --card-w: 220px;
+    --card-h: 170px;
+    --box-size: 50px;
+    --gap: 10px;
+  }
+  html,body{
+    height:100%;
+    margin:0;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background:
+      linear-gradient(135deg, rgba(255,150,80,0.12), rgba(120,60,160,0.12)),
+      url('/mnt/data/550e5e67-7516-43c0-9eb4-cacec1636d3c.png') no-repeat right top / 35%;
+    color:#111;
+  }
+  .page {
+    padding: 28px;
+    max-width:1200px;
+    margin:0 auto;
+  }
+  h1 {
+    font-size:32px;
+    margin:8px 0 20px;
+  }
+  p.lead {
+    margin:0 0 24px;
+    color:#333;
+  }
+  .grid {
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap:22px;
+    align-items:start;
+  }
+  .card {
+    background: linear-gradient(180deg,#ffd37a 0%, #f08a5d 55%);
+    box-shadow: 0 3px 0 rgba(0,0,0,0.12), inset 0 -6px 18px rgba(0,0,0,0.08);
+    border-radius:6px;
+    padding:14px;
+    min-height: var(--card-h);
+    border:2px solid rgba(0,0,0,0.12);
+    position:relative;
+  }
+  .card h3{
+    margin:0 0 10px;
+    font-size:16px;
+    font-weight:700;
+  }
+  .note {
+    font-size:12px;
+    color:#222;
+    opacity:0.85;
+    margin-bottom:8px;
+  }
+  .demo {
+    background: linear-gradient(180deg,#ffdd8f, #ffa86b);
+    padding:12px;
+    border-radius:4px;
+    min-height:80px;
+    border:2px solid rgba(0,0,0,0.08);
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    gap: var(--gap);
+    flex-wrap:nowrap;
+    flex-direction:row;
+    flex-flow:row nowrap;
+    align-content:flex-start;
+  }
+  .item {
+    width: var(--box-size);
+    height: var(--box-size);
+    background: linear-gradient(180deg,#2bb7e6, #0466c8);
+    border-radius:4px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-size:12px;
+    font-weight:700;
+    box-shadow: 0 2px 0 rgba(0,0,0,0.2);
+  }
+  .grow .item { flex: 1 1 auto; }
+  .shrink .item { flex: 0 1 auto; }
+  .basis .item:nth-child(1) { flex-basis: 120px; }
+  .basis .item:nth-child(2) { flex-basis: 60px; }
+  .basis .item:nth-child(3) { flex-basis: 40px; }
+  .order-demo .item:nth-child(1) { order:3; }
+  .order-demo .item:nth-child(2) { order:1; }
+  .order-demo .item:nth-child(3) { order:2; }
+  .wrap-demo { flex-wrap: wrap; }
+  .nowrap-demo { flex-wrap: nowrap; }
+  .col-demo { flex-direction: column; align-items:stretch; height:220px; }
+  .col-demo .item { margin:6px 0; }
+  .align-items-start { align-items:flex-start; height:140px; }
+  .align-items-center { align-items:center; height:140px; }
+  .align-items-end { align-items:flex-end; height:140px; }
+  .justify-flex-start { justify-content:flex-start; }
+  .justify-center { justify-content:center; }
+  .justify-space-between { justify-content:space-between; }
+  .justify-space-around { justify-content:space-around; }
+  .justify-space-evenly { justify-content:space-evenly; }
+  .align-content-start { align-content:flex-start; flex-wrap:wrap; height:220px; }
+  .align-content-center { align-content:center; flex-wrap:wrap; height:220px; }
+  .align-content-space-between { align-content:space-between; flex-wrap:wrap; height:220px; }
+  .align-self-demo .item:nth-child(1) { align-self:flex-start; }
+  .align-self-demo .item:nth-child(2) { align-self:center; }
+  .align-self-demo .item:nth-child(3) { align-self:flex-end; }
+  .explain {
+    margin-top:18px;
+    font-size:13px;
+    color:#333;
+    background:rgba(255,255,255,0.6);
+    padding:12px;
+    border-radius:6px;
+    border:1px solid rgba(0,0,0,0.06);
+  }
+  .prop {
+    display:block;
+    font-size:12px;
+    color:#012;
+    font-weight:600;
+    margin-bottom:6px;
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+    <h1>Flexbox Properties — Visual Demo</h1>
+    <p class="lead">Each card demonstrates one or a group of Flexbox properties.</p>
+
+    <div class="grid">
+
+      <div class="card">
+        <h3>flex-direction: row</h3>
+        <span class="note">flex-direction: row</span>
+        <div class="demo nowrap-demo" style="flex-direction:row;">
+          <div class="item">Box1</div>
+          <div class="item">Box2</div>
+          <div class="item">Box3</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>flex-direction: column</h3>
+        <span class="note">flex-direction: column</span>
+        <div class="demo col-demo">
+          <div class="item">Box1</div>
+          <div class="item">Box2</div>
+          <div class="item">Box3</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>wrap vs nowrap</h3>
+        <span class="note">flex-wrap: wrap</span>
+        <div class="demo wrap-demo" style="flex-wrap:wrap;">
+          <div class="item">Box1</div>
+          <div class="item">Box2</div>
+          <div class="item">Box3</div>
+          <div class="item">Box4</div>
+          <div class="item">Box5</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>justify-content examples</h3>
+        <span class="note">space-between, center</span>
+
+        <div class="prop">space-between</div>
+        <div class="demo justify-space-between">
+          <div class="item">A</div><div class="item">B</div><div class="item">C</div>
+        </div>
+
+        <div style="height:10px"></div>
+
+        <div class="prop">center</div>
+        <div class="demo justify-center">
+          <div class="item">A</div><div class="item">B</div><div class="item">C</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>align-items</h3>
+        <span class="note">start, center</span>
+        <div class="prop">align-items: flex-start</div>
+        <div class="demo align-items-start">
+          <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+        </div>
+
+        <div style="height:8px"></div>
+
+        <div class="prop">align-items: center</div>
+        <div class="demo align-items-center">
+          <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>align-content</h3>
+        <span class="note">multi-line alignment</span>
+        <div class="prop">align-content: space-between</div>
+        <div class="demo align-content-space-between">
+          <div class="item">A</div><div class="item">B</div><div class="item">C</div>
+          <div class="item">D</div><div class="item">E</div><div class="item">F</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>order</h3>
+        <span class="note">reordering items</span>
+        <div class="demo order-demo">
+          <div class="item">One</div>
+          <div class="item">Two</div>
+          <div class="item">Three</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>flex: grow / basis</h3>
+        <span class="note">flex-grow, shrink, basis</span>
+        <div class="prop">flex-basis example</div>
+        <div class="demo basis">
+          <div class="item">A</div><div class="item">B</div><div class="item">C</div>
+        </div>
+
+        <div style="height:10px"></div>
+
+        <div class="prop">flex: 1 (grow)</div>
+        <div class="demo grow" style="gap:8px;">
+          <div class="item">A</div><div class="item">B</div><div class="item">C</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>gap property</h3>
+        <span class="note">spacing between items</span>
+        <div class="demo" style="gap:28px;">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>align-self</h3>
+        <span class="note">per-item alignment</span>
+        <div class="demo align-self-demo" style="height:140px;">
+          <div class="item">A</div>
+          <div class="item">B</div>
+          <div class="item">C</div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</body>
+</html>
