@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tiles & Cards</title>
+<style>
+:root{
+  --accent:#e53935;
+  --card-bg:#070707;
+  --light:#f4f4f4;
+  --muted:#cfcfcf;
+}
+body{
+  margin:0;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background:#ffffff;
+  color:#222;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+.container{
+  max-width:1200px;
+  margin:40px auto;
+  padding:0 20px;
+  box-sizing:border-box;
+}
+
+/* Top small course tiles */
+.courses{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+  align-items:stretch;
+  margin-bottom:60px;
+}
+.course{
+  flex:1 1 220px;
+  background:#f7f7f7;
+  padding:18px;
+  border-radius:6px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.06);
+  min-width:200px;
+}
+.course h3{
+  margin:0 0 8px 0;
+  font-size:16px;
+  color:#333;
+  text-transform:uppercase;
+  letter-spacing:0.6px;
+}
+.course p{
+  margin:0;
+  color:#666;
+  font-size:13px;
+  line-height:1.4;
+}
+
+/* Black red profile cards row */
+.profile-row{
+  display:flex;
+  gap:28px;
+  justify-content:center;
+  margin:60px 0;
+  flex-wrap:wrap;
+}
+.profile{
+  background:var(--card-bg);
+  color:var(--light);
+  width:300px;
+  padding:28px 22px 22px;
+  box-sizing:border-box;
+  border:6px solid var(--accent);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  box-shadow:0 10px 20px rgba(0,0,0,0.25);
+}
+.profile .photo{
+  width:120px;
+  height:120px;
+  border-radius:6px;
+  overflow:hidden;
+  margin-bottom:18px;
+  background:#222;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.profile .photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.profile h2{
+  margin:0 0 12px 0;
+  font-size:20px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  border-bottom:3px solid rgba(255,255,255,0.05);
+  padding-bottom:12px;
+  width:100%;
+  font-weight:800;
+  text-shadow:0 2px 0 rgba(0,0,0,0.6);
+}
+.profile .meta{
+  margin-top:12px;
+  font-size:13px;
+  color:#dcdcdc;
+  line-height:1.6;
+}
+
+/* India squad section */
+.squad{
+  margin-top:80px;
+  padding:40px 0;
+  background-image: url("/mnt/data/28c149da-9698-42d2-8abf-ea8a2ea7a0be.png");
+  background-size:cover;
+  background-position:center;
+  color:#fff;
+}
+.squad .container{
+  background:linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.6));
+  padding:30px;
+  border-radius:8px;
+}
+.squad-title{
+  text-align:center;
+  font-size:22px;
+  font-weight:800;
+  margin-bottom:22px;
+  display:inline-block;
+  background:linear-gradient(90deg,#fff0,#fff0);
+  padding:6px 18px;
+  border-radius:30px;
+  letter-spacing:1px;
+  color:#fff;
+}
+.players{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+  justify-content:center;
+  margin-top:18px;
+}
+.player{
+  width:180px;
+  background:rgba(0,0,0,0.85);
+  border-radius:6px;
+  padding:14px;
+  box-sizing:border-box;
+  color:#fff;
+  text-align:left;
+  box-shadow:0 6px 18px rgba(0,0,0,0.5);
+}
+.player .circle{
+  width:80px;
+  height:80px;
+  border-radius:50%;
+  overflow:hidden;
+  margin:0 auto 10px;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.player .circle img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.player h4{
+  text-align:center;
+  margin:6px 0;
+  font-size:14px;
+  letter-spacing:0.6px;
+  text-transform:capitalize;
+  color:#fff;
+}
+.player .info{
+  font-size:12px;
+  color:#d7d7d7;
+  line-height:1.25;
+  margin-top:8px;
+  white-space:pre-line;
+}
+
+/* responsive */
+@media (max-width:900px){
+  .profile{width:260px;padding:20px}
+  .player{width:140px;padding:12px}
+  .player .circle{width:70px;height:70px}
+}
+@media (max-width:520px){
+  .courses{flex-direction:column}
+  .profile-row{flex-direction:column;align-items:center}
+  .profile{width:100%}
+  .player{width:45%;min-width:140px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="courses">
+    <div class="course">
+      <h3>HTML</h3>
+      <p>The Hyper Text Markup Language of HTML is designed to be displayed in a web browser. It contains the meaning and structure of web content.</p>
+    </div>
+    <div class="course">
+      <h3>CSS</h3>
+      <p>Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language such as HTML or XML.</p>
+    </div>
+    <div class="course">
+      <h3>Bootstrap</h3>
+      <p>Bootstrap is an HTML, CSS and JS library that simplifies the development of responsive web pages with common UI components and utilities.</p>
+    </div>
+    <div class="course">
+      <h3>JavaScript</h3>
+      <p>JavaScript is a high-level, often just-in-time compiled language that conforms to the ECMAScript standard used to create interactive web applications.</p>
+    </div>
+  </div>
+
+  <div class="profile-row">
+    <div class="profile">
+      <div class="photo"><img src="/mnt/data/28c149da-9698-42d2-8abf-ea8a2ea7a0be.png" alt="Dennis Ritchie"></div>
+      <h2>DENNIS RITCHIE</h2>
+      <div class="meta">Born : September 9, 1941
+Developed : C Programming, Unix
+Nationality : American</div>
+    </div>
+
+    <div class="profile">
+      <div class="photo"><img src="/mnt/data/28c149da-9698-42d2-8abf-ea8a2ea7a0be.png" alt="James Gosling"></div>
+      <h2>JAMES GOSELING</h2>
+      <div class="meta">Born : May 19, 1955
+Developed : Java Programming
+Nationality : American, Canadian</div>
+    </div>
+
+    <div class="profile">
+      <div class="photo"><img src="/mnt/data/28c149da-9698-42d2-8abf-ea8a2ea7a0be.png" alt="Tim Berners-Lee"></div>
+      <h2>TIM BERNERS-LEE</h2>
+      <div class="meta">Born : June 8, 1955
+Developed : World Wide Web
+Nationality : British</div>
+    </div>
+  </div>
+</div>
+
+<section class="squad">
+  <div class="container">
+    <div class="squad-title">INDIA WOMEN SQUAD 2023</div>
+    <div class="players">
+      <div class="player">
+        <div class="circle"><img src="/mnt/data/28c149da-9698-42d2-8abf-ea8a2ea7a0be.png" alt=""></div>
+        <h4>Harleen Deol</h4>
+        <div class="info">Role : Batter
+ODI : 104 runs
+T20 : 245 runs
+Test : None</div>
+      </div>
+
+      <div class="player">
+        <div class="circle"><img src="/mnt/data/28c149da-9698-42d2-8abf-ea8a2ea7a0be.png" alt=""></div>
+        <h4>Harmanpreet Kaur</h4>
+        <div class="info">Role : All Rounder
+ODI : 3322 runs
+T20 : 3508 runs
+Test : 38 runs</div>
+      </div>
+
+      <div class="player">
+        <div class="circle"><img src="/mnt/data/28c149da-9698-42d2-8abf-ea8a2ea7a0be.png" alt=""></div>
+        <h4>Anjali Sarvani</h4>
+        <div class="info">Role : Bowler
+ODI : None
+T20 : 16 runs
+Test : 6 runs</div>
+      </div>
+
+      <div class="player">
+        <div class="circle"><img src="/mnt/data/28c149da-9698-42d2-8abf-ea8a2ea7a0be.png" alt=""></div>
+        <h4>Smriti Mandhana</h4>
+        <div class="info">Role : Batter
+ODI : 3073 runs
+T20 : 2802 runs
+Test : 325 runs</div>
+      </div>
+
+      <div class="player">
+        <div class="circle"><img src="/mnt/data/28c149da-9698-42d2-8abf-ea8a2ea7a0be.png" alt=""></div>
+        <h4>Deepti Sharma</h4>
+        <div class="info">Role : All Rounder
+ODI : 2731 runs
+T20 : 1985 runs
+Test : 101 runs</div>
+      </div>
+
+      <div class="player">
+        <div class="circle"><img src="/mnt/data/28c149da-9698-42d2-8abf-ea8a2ea7a0be.png" alt=""></div>
+        <h4>Rajeshwari Gayakwad</h4>
+        <div class="info">Role : Bowler
+ODI : 2059 runs
+T20 : 139 runs
+Test : 145 runs</div>
+      </div>
+
+      <div class="player">
+        <div class="circle"><img src="/mnt/data/28c149da-9698-42d2-8abf-ea8a2ea7a0be.png" alt=""></div>
+        <h4>Pooja Vastrakar</h4>
+        <div class="info">Role : Bowler
+ODI : 751 runs
+T20 : 343 runs
+Test : 115 runs</div>
+      </div>
+
+      <div class="player">
+        <div class="circle"><img src="/mnt/data/28c149da-9698-42d2-8abf-ea8a2ea7a0be.png" alt=""></div>
+        <h4>Shafali Verma</h4>
+        <div class="info">Role : Batter
+ODI : 531 runs
+T20 : 1333 runs
+Test : 242 runs</div>
+      </div>
+
+      <div class="player">
+        <div class="circle"><img src="/mnt/data/28c149da-9698-42d2-8abf-ea8a2ea7a0be.png" alt=""></div>
+        <h4>Yastika Bhatia</h4>
+        <div class="info">Role : Batter
+ODI : 478 runs
+T20 : 146 runs
+Test : 22 runs</div>
+      </div>
+
+      <div class="player">
+        <div class="circle"><img src="/mnt/data/28c149da-9698-42d2-8abf-ea8a2ea7a0be.png" alt=""></div>
+        <h4>Shikha Pandey</h4>
+        <div class="info">Role : All-Rounder
+ODI : 1644 runs
+T20 : 1125 runs
+Test : 141 runs</div>
+      </div>
+
+      <div class="player">
+        <div class="circle"><img src="/mnt/data/28c149da-9698-42d2-8abf-ea8a2ea7a0be.png" alt=""></div>
+        <h4>Jemimah Rodrigues</h4>
+        <div class="info">Role : Batter
+ODI : 1744 runs
+T20 : 1702 runs
+Test : None</div>
+      </div>
+
+      <div class="player">
+        <div class="circle"><img src="/mnt/data/28c149da-9698-42d2-8abf-ea8a2ea7a0be.png" alt=""></div>
+        <h4>Richa Ghosh</h4>
+        <div class="info">Role : Wicketkeeper Batter
+ODI : 563 runs
+T20 : 311 runs
+Test : None</div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>
